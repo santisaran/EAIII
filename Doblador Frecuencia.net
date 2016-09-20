@@ -1,9 +1,14 @@
 * E:\Codigos\pruebas\eaIII\EAIII\Doblador Frecuencia.asc
-R1 N001 N002 42.4115008234622
-L1 N002 N001 3.375e-07
-I1 N002 0 PWL file=salida.txt
+R1 N001 out 42.4115008234622
+L1 out N001 3.375e-07
+I1 out 0 PWL file=salida.txt
 V1 N001 0 100
-C1 N001 N002 1.8763182155988485e-08
+C1 N001 out 1.8763182155988485e-08
+D1 out outdemod D
+C2 N001 outdemod 22n
+R2 N001 outdemod 10K
+.model D D
+.lib C:\Users\spaleka\Documents\LTspiceXVII\lib\cmp\standard.dio
 .tran 0.006
 .backanno
 .end
